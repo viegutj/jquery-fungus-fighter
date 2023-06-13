@@ -7,6 +7,7 @@ console.log('hello js!');
 let heroAP = 100;
 let fungusHP = 100;
 
+
 function onReady() {
     // Make sure you check the index.html file! 
     // There are lots of buttons and things ready for you to hook into here!
@@ -24,6 +25,16 @@ function onReady() {
     // - Handle events that ->
     // - Updates state which is ->
     // - Rendered to the DOM
+
+    // HP Regeneration: if freaky fungus's HP falls bellow 50, 
+    // have it regenerate 1HP every second. Hint: look up the 
+    // built in setInterval() function!
+    // if (fungusHP < 50) {
+    //     setInterval(hpRegeneration, 100)
+    // }
+    // Not sure where to put this? If I put it into the 
+    // render(), it only occurs when the function is 
+    // called.
 }
 
 // Event Handlers
@@ -85,4 +96,8 @@ function render() {
     }
     $('.ap-text').text(heroAP).append(' AP');
     $('.hp-text').text(fungusHP).append(' HP');
+}
+
+function hpRegeneration(params) {
+    fungusHP++
 }
