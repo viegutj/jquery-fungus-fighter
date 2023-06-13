@@ -26,15 +26,6 @@ function onReady() {
     // - Updates state which is ->
     // - Rendered to the DOM
 
-    // HP Regeneration: if freaky fungus's HP falls bellow 50, 
-    // have it regenerate 1HP every second. Hint: look up the 
-    // built in setInterval() function!
-    // if (fungusHP < 50) {
-    //     setInterval(hpRegeneration, 100)
-    // }
-    // Not sure where to put this? If I put it into the 
-    // render(), it only occurs when the function is 
-    // called.
 }
 
 // Event Handlers
@@ -77,6 +68,20 @@ function render() {
     if (fungusHP < 0 ) {
         fungusHP = 0
     }
+
+        // HP Regeneration: if freaky fungus's HP falls bellow 50, 
+    // have it regenerate 1HP every second. Hint: look up the 
+    // built in setInterval() function!
+    if (fungusHP < 50) {
+        // label with handle te set up for clearInterval()
+        setInterval(hpRegeneration, 1000)
+    } else {
+        clearInterval()
+    }
+    // Not sure where to put this? If I put it into the 
+    // render(), it only occurs when the function is 
+    // called.
+
     // If hp is equal 0, replace walk class with a dead class on the freaky-fungus element
     if (fungusHP === 0) {
         // console.log('fungus should be dead');
@@ -98,6 +103,10 @@ function render() {
     $('.hp-text').text(fungusHP).append(' HP');
 }
 
-function hpRegeneration(params) {
+function hpRegeneration() {
     fungusHP++
+    // console.log(fungusHP);
+    // log success!
+    // get this to impact the DOM
+    $('.hp-text').text(fungusHP).append(' HP');
 }
