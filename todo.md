@@ -6,7 +6,7 @@ Base Mode
 - [x] - Update text above enemy funcus (ex 100HP)
 - [x] - If hp is equal 0, replace walk class with a dead class on the freaky-fungus element
 - [x] - if ap is equal to 0, replace walk class with a jump class on the freaky-fungus element
-- [ ] - if ap is equal to 0, give all attack buttons a disabled attribute
+- [x] - if ap is equal to 0, give all attack buttons a disabled attribute
 
 
 Stretch Goals

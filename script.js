@@ -74,6 +74,12 @@ function render() {
     }
     // if ap is equal to 0, replace walk class with a jump class on the freaky-fungus element
     if (heroAP === 0) {
+    // if ap is equal to 0, give all attack buttons a disabled attribute
+        // $('.attack-btn').removeClass('.attack-btn')
+        // $('.attack-btn').addClass('.attack-btn[disabled]')
+    // WOOF this one was tricky. had to do lots of googling
+        $('.attack-btn').attr('disabled', true)
+
         $('.freaky-fungus').removeClass('walk')
         $('.freaky-fungus').addClass('jump')
     }
